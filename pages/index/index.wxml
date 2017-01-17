@@ -1,0 +1,48 @@
+<view class="top-nav">
+  <view class="top-nav-bar">
+    <view>首页</view>
+    <view>最新</view>
+    <view>最热</view>
+  </view>
+</view>
+
+<!--首页，轮播图-->
+<swiper class="banner-swiper" indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}">
+  <swiper-item class="swiper-item" wx:for="{{ imgUrls }}">
+    <navigator url="../detail/detail?id={{ item.productId }}">
+      <image src="{{ item.picurl }}" class="slide-image"></image>
+    </navigator>
+  </swiper-item>
+</swiper>
+
+<!--货架分类-->
+<view class="shelf-nav">
+  <view class="shelf-nav-item" wx:for="{{ classesPic }}">
+    <navigator url="../list/list?id={{ item.id }}">
+      <image src="{{ item.picurl }}" class="shelf-nav-item__image">
+      </image>
+      <text class="shelf-nav-item__text">{{ item.name }}</text>
+    </navigator>
+  </view>
+</view>
+
+<!--货架列表标题-->
+<view class="shelf-header">
+  <view class="shelf-title">
+    <text class="shelf-title-en">{{ shelf.english_name }}</text>
+    <text class="shelf-title-cn">{{ shelf.name }}</text>
+  </view>
+  <view class="shelf-more">
+    <navigator url="../list/list?id={{ shelf.id }}" class="ifanrin-more-icon ifanrin">
+      ...
+    </navigator>
+  </view>
+</view>
+
+<!--引入列表项模板-->
+<import src="../../templates/productCard/productCard.wxml" />
+<view class="product-list">
+  <block wx:for="{{ productNewList }}">
+    <template is="productCard" data="{{ ...item }}" />
+  </block>
+</view>

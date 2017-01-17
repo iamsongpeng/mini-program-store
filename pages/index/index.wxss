@@ -1,0 +1,85 @@
+/**index.wxss**/
+page {
+  background-color: #fff;
+}
+/*顶部导航栏*/
+
+.top-nav {
+  width: 750rpx;
+  position: fixed;
+	top: 0;
+  z-index: 1;
+}
+
+.top-nav-bar {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10pt;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: #e5e5e5 solid 1px;
+}
+
+/*轮播图*/
+
+swiper {
+  margin-top: 36px;
+  height: 380rpx;
+}
+
+.slide-image {
+  width: 750rpx;
+  height: 450rpx;
+}
+
+/*货架分类*/
+
+.shelf-nav {
+  display: flex; /*设置 display: flex; 将它变为 flex 布局的元素*/
+  flex-wrap: wrap; /*当子元素总宽度超过父元素宽度时换行显示*/
+  padding: 30rpx;
+  font-size: 9pt;
+}
+
+.shelf-nav-item {
+  width: 25%; /*因为每行显示 4 个货架，所以宽度设置为 25%*/
+  margin-bottom: 20rpx;
+  text-align: center; /*让它中间的图片和标题居中显示*/
+}
+
+.shelf-nav-item__image {
+  width: 130rpx; /*在视觉稿中量取图片宽高为 130px*/
+  height: 130rpx; /*于是设置 width 和 height 都设置为130rpx*/
+  border-radius: 50%; /*把图片设置成圆形*/
+  border: 1px solid #d9d9d9; /*加上外边框*/
+}
+
+.shelf-nav-item__text {
+    display: block;
+}
+
+/*货架列表标题*/
+
+.shelf-header {
+  display: flex; /*设置为 flex 布局的元素*/
+  justify-content: space-between; /*均匀排列每个元素，首、末两元素分别位于起点和终点*/
+  font-weight: 900;
+  margin: 0 30rpx;
+}
+
+.shelf-title {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.shelf-title-en {
+  border-bottom: #000000 solid 3px;
+}
+
+.shelf-more {
+  align-self: center; /*设置居中*/
+}
+
+
+/*货架列表*/

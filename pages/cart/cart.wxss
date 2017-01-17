@@ -1,0 +1,164 @@
+/* pages/cart/cart.wxss */
+/*购物车空时，显示状态*/
+
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  color: #939393;
+  position: relative;
+  top: 300rpx;
+}
+
+.cart_tip text {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 12rpx;
+
+}
+
+.cart_button {
+  margin-top: 80rpx;
+  width: 90%;
+}
+
+.cart_button button {
+  color: #fff;
+  background-color: #fd544a;
+} 
+
+/*购物车有商品时状态*/
+.items_container {
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    font-size: 13px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 5px;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+/*复选框*/
+.item icon {
+	margin: 20rpx;
+}
+
+/*缩略图*/
+.pic {
+	display: block;
+	width: 60px;
+	height: 60px;
+}
+
+.item_right {
+    flex: 1;
+    padding-right: 10px;
+}
+/*商品标题*/
+.title {
+    margin: 10px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+    color: #333;
+    line-height: 14px;
+    height: 36px;
+}
+
+.title .delete_text {
+    color: #939393;
+    padding: 1px 5px;
+}
+
+.number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.number .price {
+    text-align: center;
+    color: #fd544a;
+    font-weight: 900;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity text {
+    background-color: #F2f2f2;
+    margin: 5px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    font-weight: 900;
+    color: #939393;
+    
+}
+.quantity input {
+    width: 30px;
+    height: 26px;
+    text-align: center;
+    background-color: #F2f2f2;
+}
+
+/*购物车底部结算按钮，固定*/
+/*底部按钮*/
+.carts_footer {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+	border-top: 1px solid #eee;
+	background: white;
+    z-index: 1;
+}
+
+/*复选框*/
+.carts_footer icon {
+	margin: 20rpx;
+}
+
+/*全选字样*/
+.carts_footer text {
+	margin-left: 8rpx;
+	line-height: 10rpx;
+}
+
+.check_all,
+.pay_data 
+{
+    display: flex;
+    align-items: center;
+}
+
+/*立即结算按钮*/
+.carts_footer .pay_button {
+	text-align: center;
+	width: 80px;
+	height: 40px;
+	background-color: #f60;
+	color: white;
+	border-radius: 0;
+	border: 0;
+    font-size: 14px;
+}

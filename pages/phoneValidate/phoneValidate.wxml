@@ -1,0 +1,12 @@
+<view class="container">
+  <form bindsubmit="requestCode" class="formStyle">
+    <label class="pd10">手机号：</label>
+    <input class="pd10 mg10" placeholder-style="color:#48c23d" placeholder="输入您的手机号" auto-focus maxlength="11" type="digit" name="phone" />
+    <button class="pd10 mg10" type="primary" form-type="submit">获取验证码</button>
+  </form>
+  <form bindsubmit="verifyCode" class="formStyle">
+    <label class="pd10">验证码</label>
+    <input class="pd10 mg10" placeholder="输入验证码" type="digit" maxlength="6" name="code" />
+    <button class="pd10 mg10" type="primary" form-type="submit">提交</button>
+  </form>
+</view>

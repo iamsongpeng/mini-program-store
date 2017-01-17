@@ -1,0 +1,45 @@
+<!--首页，轮播图-->
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.picurl}}" class="slide_image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!--主题馆-->
+<view class="text">
+  <view class="line_flag"></view>
+  <text>主题馆</text>
+</view>
+<view class="venues_box">
+  <view class="venues_list">
+  <block wx:for="{{venues_items}}">
+    <view class="venues_item">
+      <navigator url="../brand/brand?id={{item.id}}">
+        <image src="{{item.smallpic}}"></image>
+      </navigator>
+    </view>
+  </block>
+  </view>
+</view>
+
+<!--精选商品-->
+<view class="text">
+  <view class="line_flag"></view>
+  <text>精选商品</text>
+</view>
+<view class="choice_box">
+  <view class="choice_list">
+  <block wx:for="{{choice_items}}">
+    <view class="choice_item">
+      <navigator url="../detail/detail?id={{item.id}}">
+        <image src="{{item.goodspics}}"></image>
+        <view class="title">{{item.title}}</view>
+      </navigator>
+    </view>
+  </block>
+  </view>
+</view>

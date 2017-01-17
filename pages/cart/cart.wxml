@@ -1,0 +1,69 @@
+
+<!--pages/cart/cart.wxml-->
+
+<!--购物车空时，显示状态-->
+<view class="container" wx:if="{{condition}}">
+  <view class="cart_tip">
+    <text>您的购物车没有商品</text>
+    <text>快去挑选吧</text>
+  </view>
+  <view class="cart_button">
+    <navigator url="../index/index" open-type="switchTab">
+      <button> 去挑选 </button>
+    </navigator>
+  </view>
+</view>
+
+<!--购物车有商品时状态-->
+<view wx:else class="items_container">
+  <block wx:for="{{cartItems}}">
+    <view class="item" data-id="{{item.id}}">
+
+      <!-- 复选框图标 -->
+      <view>
+        <icon wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
+        <icon wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
+      </view>
+
+      <!--点击图片区域，触发是否删除此商品，阻止冒泡事件-->
+      <view class="image">
+        <image class="pic" mode="aspectFit" src="{{item.goodsPicsInfo}}"></image>
+      </view>
+
+      <!--购物车商品信息-->
+      <view class="item_right">
+        <view class="title">
+          <text>{{item.title}}</text>
+          <text class="delete_text" catchtap="catchTapOnItem" data-id="item.id">×</text>
+        </view>
+        <view class="number">
+          <text class="price">￥{{item.price}}/件</text>
+          <view class="quantity">
+
+            <!-- 减号 -->
+            <text class="{{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+
+            <!-- 数量 -->
+            <input value="{{item.quantity}}" bindinput="bindchangeQuantity" data-id="{{item.id}}" />
+
+            <!-- 加号 -->
+            <text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!--底部结算按钮-->
+  <view class="carts_footer">
+    <view class="check_all" bindtap="bindSelectAll">
+      <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20" />
+      <icon wx:else type="circle" size="20" />
+      <text>全选</text>
+    </view>
+    <view class="pay_data">
+      <text>合计￥: {{amount}}元</text>
+      <view class="pay_button" bindtap="bindCheckout">结算</view>
+    </view>
+  </view>
+</view>

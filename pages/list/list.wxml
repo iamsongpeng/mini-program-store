@@ -1,0 +1,25 @@
+<view class="container">
+  <block wx:for="{{list}}">
+    <view class="brand_item">
+      <navigator url="../detail/detail?id={{item.id}}">
+        <image class="pic" src="{{item.goodspics}}"></image>
+      </navigator>
+      <view class="right_cont">
+        <navigator url="../detail/detail?id={{item.id}}">
+          <text class="country">{{item.country}}直采 {{item.bigname}}发货</text>
+          <text class="name">{{item.title}}</text>
+        </navigator>
+      </view>
+      <view class="price">
+        <text class="ourprice">{{item.ourprice}}</text>
+        <text class="name">8折</text>
+        <text class="marketprice">{{item.marketprice}}.00</text>
+
+        <!--事件，加入购物车-->
+        <view data-id="{{item.id}}" data-title="{{item.title}}" data-price="{{item.ourprice}}" data-pic="{{item.goodspics}}" bindtap="tocart">
+          加入购物车
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

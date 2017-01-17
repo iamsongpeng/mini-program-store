@@ -1,0 +1,39 @@
+.useravatar{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+}
+.question-item{
+	display:flex;
+	flex-direction: column;
+	box-sizing:border-box;
+	padding:20rpx;
+	margin:20rpx 0rpx;
+	background-color: #fff;
+	
+}
+.question-title{
+	display:flex;
+	font-size:35rpx;
+	margin-bottom:20rpx;
+}
+.question-reply{
+	display: flex;
+	flex-direction:row;
+	
+}
+.answer{
+	background-color: #48c23d;
+	width: 500rpx;
+	height: 80rpx;
+	margin-left: 30rpx;
+	text-align: center;
+	border-radius: 80rpx;
+	color:#fff;
+	line-height: 80rpx;
+	font-size: 40rpx;
+}
+.userdesc{
+	margin-top:20rpx;
+	color: #888;
+}

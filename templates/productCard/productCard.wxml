@@ -1,0 +1,15 @@
+/*** productCard.wxml ***/
+<template name="productCard">
+  <view class="product-card">
+    <navigator class="nav-product-card" url="../detail/detail?id={{ id }}">
+      <!--<view style="background-image:url({{picurl}})" class="product-cover"></view>-->
+      <view>
+        <image class="product-cover" src="{{picurl}}"></image>
+      </view>
+      <view>
+        <text class="product-title">{{ title }}</text>
+        <text class="product-price">￥{{ price }}</text>
+      </view>
+    </navigator>
+  </view>
+</template> 

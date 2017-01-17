@@ -1,0 +1,11 @@
+
+<block wx:for="{{data}}">
+<view class="question-item" catchtap="onClick" data-id="{{ item.objectId }}">
+  <view class="question-title"  data-id="{{ item.objectId }}">{{item.title}}</view>
+  <view class="question-reply">
+    <image class="useravatar" src="{{ item.replyer.avatarUrl  }}"></image>
+    <text class="answer">限时免费听</text>
+  </view>
+  <view class="userdesc"><text class="usertitle">{{ item.replyer.desc  }}</text></view>
+</view>
+</block>

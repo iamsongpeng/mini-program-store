@@ -1,0 +1,29 @@
+.product-card {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  padding-top: 26rpx;
+}
+
+.product-cover {
+  height: 300rpx;
+  width: 300rpx;
+}
+.product-title,
+.product-price
+{
+  width: 300rpx;
+  white-space:nowrap;
+  display: block;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 40rpx;
+}
+
+.product-title {
+  font-size: 9pt;
+}
+.product-price {
+  font-size: 10pt;
+}
