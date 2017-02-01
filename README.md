@@ -1,23 +1,6 @@
-http://huanqiuxiaozhen.com/wemall/slider/list 幻灯
-http://huanqiuxiaozhen.com/wemall/venues/venuesList 品牌
-http://huanqiuxiaozhen.com/wemall/goods/choiceList 热品推荐
-http://huanqiuxiaozhen.com/wemall/venues/getBrandAndType?id= 获取品牌详情
-http://huanqiuxiaozhen.com/wemall/goods/inggoods?id=
+待完善内容：
 
-
-豆瓣API
-
-Top250 
-(Resources URI) https://api.douban.com/v2/movie/top250
-
-电影条目搜索
-(Resources URI) https://api.douban.com/v2/movie/search?q={text}
-
-影人剧照
-(Resources URI) https://api.douban.com/v2/movie/celebrity/:id/photos
-
-电影条目短评列表
-(Resources URI) https://api.douban.com/v2/movie/subject/:id/comments
-
-电影条目信息
-(Resources URI) https://api.douban.com/v2/movie/subject/:id
+* 动态绑定标题
+* 页面内刷新内容
+* 马上购物和加入购物车按钮实现：sku商品组合
+    * [Sku算法，Android实现，淘宝Sku实现](https://github.com/DesignPCode/Sku)

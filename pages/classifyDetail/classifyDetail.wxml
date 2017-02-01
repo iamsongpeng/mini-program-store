@@ -1,3 +1,12 @@
+<!--这部分与首页相似，后期改成模板-->
+<view class="top-nav">
+  <view class="top-nav-bar">
+    <view>首页</view>
+    <view>最新</view>
+    <view>最热</view>
+  </view>
+</view>
+
 <!--引入列表项模板-->
 <import src="../../templates/productCard/productCard.wxml" />
 <view class="product-list">

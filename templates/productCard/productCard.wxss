@@ -2,7 +2,7 @@
   width: 50%;
   display: inline-block;
   text-align: center;
-  padding-top: 26rpx;
+  margin-bottom: 26rpx;
 }
 
 .product-cover {

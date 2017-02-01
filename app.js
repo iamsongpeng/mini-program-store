@@ -18,7 +18,7 @@ App({
 
     // 假设已经通过 AV.User.loginWithWeapp() 登录
     // 获得当前登录用户
-    //const user = AV.User.current(); 为啥把这句放在这就报错呢？
+    const user = AV.User.current(); //为啥把这句放在这就报错呢？
     // 调用小程序 API，得到用户信息
     wx.getUserInfo({
       success: ({userInfo}) => {

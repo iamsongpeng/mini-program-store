@@ -1,0 +1,26 @@
+/* pages/classifyDetail/classifyDetail.wxss */
+page {
+  background-color: #fff;
+}
+/*顶部导航栏*/
+
+.top-nav {
+  width: 750rpx;
+  position: fixed;
+	top: 0;
+  z-index: 1;
+}
+
+.top-nav-bar {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10pt;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: #e5e5e5 solid 1px;
+}
+
+.product-list {
+  margin-top: 36px;
+}
+  

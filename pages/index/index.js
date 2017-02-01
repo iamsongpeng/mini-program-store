@@ -1,5 +1,4 @@
 //index.js
-
 //获取应用实例
 var app = getApp()
 
@@ -11,11 +10,15 @@ Page({
     interval: 3000,
     duration: 1000,
     classesPic: [],
-    shelf: { 
+    shelf: {
       english_name: "New Arrivals",
       name: "新品上架"
     },
-    productNewList: []
+    productNewList: [],
+    bindtapName: "index",
+    hiddenNew: true,
+    hiddenHot: true,
+    hiddenIndex: false
   },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
@@ -40,25 +43,7 @@ Page({
 
     //货架分类
     wx.request({
-      url: 'https://api.leancloud.cn/1.1/classes/Coffee/587d869b1b69e60058485a3e',
-      data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {
-        // 设置请求的 header，content-type 默认为 'application/json'
-        'X-LC-Id': 'NifgaRbeW9zYQU8pP4zxPC9S-gzGzoHsz',
-        'X-LC-Key': 'Ygv6uGw1TQmpB2Kk18m5TgvX'
-      },
-      success: function (res) {
-        // success
-        var classesPic = res.data.data;
-        that.setData({
-          classesPic: classesPic
-        })
-      }
-    });
-    //货架列表
-    wx.request({
-      url: 'https://api.leancloud.cn/1.1/classes/Detail/587d869b8d6d8100589643fa',
+      url: 'https://api.leancloud.cn/1.1/classes/Classify/587ed398128fe100570ad98d',
       data: {},
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       header: {
@@ -69,7 +54,26 @@ Page({
       success: function (res) {
         // success
         console.log(res)
-        let productNewList = res.data.data
+        var classesPic = res.data.data;
+        that.setData({
+          classesPic: classesPic
+        })
+      }
+    });
+    //货架列表
+    wx.request({
+      url: 'https://api.leancloud.cn/1.1/classes/ProductDetail',
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {
+        // 设置请求的 header，content-type 默认为 'application/json'
+        'X-LC-Id': 'NifgaRbeW9zYQU8pP4zxPC9S-gzGzoHsz',
+        'X-LC-Key': 'Ygv6uGw1TQmpB2Kk18m5TgvX'
+      },
+      success: function (res) {
+        // success
+        console.log(res.data.results)
+        let productNewList = res.data.results
         that.setData({
           productNewList: productNewList
         })
@@ -108,5 +112,26 @@ Page({
       desc: 'desc', // 分享描述
       path: 'path' // 分享路径
     }
+  },
+  toNew: function (res) {
+    this.setData({
+      hiddenNew: false,
+      hiddenHot: true,
+      hiddenIndex: true
+    })
+  },
+  toHot: function (res) {
+    this.setData({
+      hiddenNew: true,
+      hiddenHot: false,
+      hiddenIndex: true
+    })
+  },
+  toIndex: function () {
+    this.setData({
+      hiddenNew: true,
+      hiddenHot: true,
+      hiddenIndex: false
+    })
   }
 })

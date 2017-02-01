@@ -4,3 +4,64 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
 </view>
+
+<!--header，我的订单 & 地址管理-->
+<view class="top-nav">
+  <view class="top-nav-bar">
+    <view bindtap="toOrder" id="top-nav-bar-{{!hiddenOrder ? true : 0}}">我的订单</view>
+    <view bindtap="toAddress" id="top-nav-bar-{{!hiddenAddress ? true : 0}}">地址管理</view>
+  </view>
+</view>
+
+<!--我的订单-->
+<view hidden="{{hiddenOrder}}" class="order">
+  <view class="order-num">
+    <view>订单编号 20000000000000</view>
+    <view>已支付</view>
+  </view>
+  <view class="order-detail">
+    <view class="order-detail-main">
+      <view class="order-detail-pic">商品图片</view>
+      <view class="order-detail-title">
+        <view>标题</view>
+        <view class="order-detail-color">颜色</view>
+      </view>
+      <view>
+        <view>￥{{269}}</view>
+        <view>×{{1}}</view>
+      </view>
+    </view>
+    <view class="order-detail-goods">
+      <text>{{"已发货"}} </text>
+      <text>确认收货</text>
+    </view>
+  </view>
+  <view class="order-price">
+    <text>共{{1}}件商品 </text>
+    <text>合计：￥{{269}}</text>
+  </view>
+</view>
+
+<!--地址管理-->
+<view hidden="{{hiddenAddress}}" class="address">
+  <view class="address-icon">icon</view>
+  <view class="address-detail">
+    <view class="address-name-phone">{{"宋鹏 13777777777"}}</view>
+    <view class="address-info">江苏省苏州市昆山市陆家镇000号</view>
+    <view class="address-edit">
+      <view>
+        <icon></icon>默认</view>
+      <view>
+        <text>编辑</text>
+        <text> | </text>
+        <text>删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+<navigator url="../address/address">
+  <view hidden="{{hiddenAddress}}" class="add-address">
+    <image class="add-address-icon" src="#"></image>
+    <view>新增地址</view>
+  </view>
+</navigator>

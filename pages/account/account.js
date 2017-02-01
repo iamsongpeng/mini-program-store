@@ -1,4 +1,3 @@
-
 //获得 leanCloud AV 的引用
 const AV = require('../../libs/av-weapp-min.js');
 
@@ -7,14 +6,14 @@ var app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    hiddenOrder: false,
+    hiddenAddress: true
 
   },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
     var that = this
-    // 调用应用实例的方法获取全局数据
+    //调用应用实例的方法获取全局数据
     console.log(app.globalData.user)
     var userInfo = app.globalData.user
     that.setData({
@@ -52,5 +51,17 @@ Page({
       desc: 'desc', // 分享描述
       path: 'path' // 分享路径
     }
+  },
+  toOrder: function (res) {
+    this.setData({
+      hiddenOrder: false,
+      hiddenAddress: true
+    })
+  },
+  toAddress: function (res) {
+    this.setData({
+      hiddenOrder: true,
+      hiddenAddress: false
+    })
   }
 })

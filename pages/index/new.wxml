@@ -1,7 +1,0 @@
-<!--引入列表项模板-->
-<import src="../../templates/productCard/productCard.wxml" />
-<view class="product-list">
-  <block wx:for="{{ productNewList }}">
-    <template is="productCard" data="{{ ...item }}" />
-  </block>
-</view>

@@ -122,43 +122,37 @@
 /*底部按钮*/
 .carts_footer {
 	width: 100%;
-	height: auto;
+	height: 100rpx;
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
 	position: fixed;
 	bottom: 0;
-	border-top: 1px solid #eee;
 	background: white;
+    font-size: 14px;
     z-index: 1;
-}
-
-/*复选框*/
-.carts_footer icon {
-	margin: 20rpx;
-}
-
-/*全选字样*/
-.carts_footer text {
-	margin-left: 8rpx;
-	line-height: 10rpx;
 }
 
 .check_all,
 .pay_data 
 {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
+.check_all,
+.check_all_text,
+.pay_button_total {
+    padding: 0 30rpx;
+}
+
 /*立即结算按钮*/
-.carts_footer .pay_button {
-	text-align: center;
+.pay_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 	width: 80px;
-	height: 40px;
-	background-color: #f60;
-	color: white;
-	border-radius: 0;
-	border: 0;
-    font-size: 14px;
+	height: 100rpx;
+	background-color: #f8504d;
+    color: #fff;
 }

@@ -1,36 +1,231 @@
 /* pages/detail/detail.wxss */
-page{
-    background-color: #fff;
-    font-size: 14px;
-}
-.swiper_box {
-    width: 100%;
-    height: 320px;
-}
-.swiper_box .slide-image{
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    overflow: hidden;
-}
-.shopping_container{
-    padding: 0 30rpx;
-}
-.shopping_container .title{
-    margin: 20rpx 0;
-    font-weight: bold;
-    color: #333;
+
+/*轮播图*/
+
+swiper {
+  height: 380rpx;
 }
 
-.shopping_container .reason{
-    margin: 20rpx 0;
-    color: #939393;
-    line-height: 22px;
+.slide-image {
+  width: 750rpx;
+  height: 450rpx;
 }
-.line {
-    display: flex;
+
+/*商品基本信息*/
+
+.shopping_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 20rpx;
 }
-#quantity {
-    width:60px;
-    border: #333 solid 1px;
+
+.title {
+  font-size: 11pt;
+  font-weight: 900;
 }
+
+.price {
+  background-color: #09bb07;
+  font-size: 9pt;
+  padding: 4px;
+  color: #fff;
+}
+
+.recommand {
+  font-size: 8pt;
+  color: #888;
+}
+
+.title, .price, .recommand {
+  margin: 18rpx 0;
+}
+
+/*商品详情导航栏*/
+
+.shopping-detail-nav {
+  background-color: #fff;
+  margin-top: 6px;
+  width: 750rpx;
+}
+
+.shopping-detail-nav-bar {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10pt;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: #e5e5e5 solid 1px;
+}
+
+#nav-bar-true {
+  border-bottom: 2px #09bb07 solid;
+}
+
+/*购物车底部结算按钮，固定*/
+
+.cart_footer {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  background: #fff;
+  color: #fff;
+  font-size: 9pt;
+}
+
+.pay_data {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart_icon_view,
+.cart_button,
+.pay_button,
+.pay-now-footer-pay,
+.to-cart-footer-pay {
+  display:flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  /*width: 250rpx;*/ /*用 flex: 1; 代替*/
+  height: 100rpx;
+}
+.cart_icon {
+  width: 20px;
+  height: 20px;
+}
+.pay_button,
+.pay-now-footer-pay {
+  background-color: #f8504d;
+}
+.cart_button,
+.to-cart-footer-pay {
+  background-color: #ff7d7b;
+}
+
+/*马上购买弹窗*/
+
+/*弹窗主体*/
+.pay-now,
+.to-cart {
+  position: fixed;
+	bottom: -336px;
+	left: 0;
+	width: 100%;
+	height: 336px;
+	margin-top: 5px;
+	background: #fff;
+	/*z-index 属性指定一个元素的堆叠顺序*/
+	z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/*遮罩层*/
+.modal-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    z-index: 100;
+}
+
+/*初始隐藏*/
+.hidden {
+  display: none;
+}
+
+/*运行时显示*/
+.show {
+  display: block;
+}
+
+.pay-now-detail,
+.to-cart-detail {
+  font-size: 11pt;
+  display: flex;
+  justify-content: space-around;
+  padding: 18rpx;
+  border-bottom: lightgrey solid 1px;
+  flex: 1.4;
+}
+/*马上购买弹窗的图片*/
+.pay-now-detail-img,
+.to-cart-detail-img {
+  width: 50px;
+  height: 50px;
+  padding: 0 10rpx;
+}
+/*马上购买弹窗的标题和价格*/
+.pay-now-detail-tp,
+.to-cart-detail-tp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pay-now-detail-price,
+.to-cart-detail-price {
+  color: orangered;
+  font-weight: 900;
+}
+/*删除符号*/
+.modal-close text{
+  font-size: 12px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background-color: gainsboro;
+}
+
+/*购买数量*/
+.pay-now-quantity,
+.to-cart-quantity {
+  display: flex;
+  justify-content: space-between;
+  flex: 5.6;
+  padding: 18rpx;
+  font-size: 10pt;
+}
+.pay-now-quantity-am,
+.to-cart-quantity-am {
+  display: flex;
+  justify-content: center;
+}
+.pay-now-quantity-bg,
+.to-cart-quantity-bg {
+  background-color: lightgrey;
+  height: 20px;
+  width: 20px;
+  margin: 1px;
+  text-align: center;
+}
+
+/*总价和马上购买*/
+.pay-now-footer,
+.to-cart-footer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.pay-now-footer-total,
+.to-cart-footer-total {
+  flex:2;
+}
+.pay-now-footer-pay,
+.to-cart-footer-pay {
+  flex: 1;
+  color:#fff;
+  font-size: 9pt;
+}
+

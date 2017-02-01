@@ -59,10 +59,10 @@
     <view class="check_all" bindtap="bindSelectAll">
       <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20" />
       <icon wx:else type="circle" size="20" />
-      <text>全选</text>
+      <text class="check_all_text">全选</text>
     </view>
     <view class="pay_data">
-      <text>合计￥: {{amount}}元</text>
+      <view class="pay_button_total"><text>合计￥: {{amount}}元</text></view>
       <view class="pay_button" bindtap="bindCheckout">结算</view>
     </view>
   </view>

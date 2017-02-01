@@ -1,33 +1,108 @@
-<view class="container">
-  <view>
-    <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{goodsPicsInfo}}">
-        <swiper-item>
-            <image src="{{item.picurl}}" class="slide-image" width="355" height="150" />
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
+<view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{goodsPicsInfo}}">
+      <swiper-item>
+        <image src="{{item.picurl}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
 
-  <view class="shopping_container">
-    <view class="title">{{shoppingDetails.title}}</view>
-    <view class="reason">{{shoppingDetails.reason}}</view>
+<!--商品基本信息-->
+<view class="shopping_container">
+  <view class="title">
+    <text>{{shoppingDetails.title}}</text>
   </view>
+  <view class="price">
+    <text>￥{{shoppingDetails.price}}</text>
+  </view>
+  <view class="recommand">
+    <text>{{shoppingDetails.recommand}}</text>
+  </view>
+</view>
 
-  <view>
-    <form>
-      <view class="line">
-        <view class="section_price">
-          <text id="price">￥{{shoppingDetails.ourprice}}</text>        
-        </view>
-        <view class="section quantity">
-          <view>购买数量：</view>
-          <input id="quantity" name="quantity" bindinput="bindQuantityInput" value="1" type="number"/>
-        </view>
-        <view class="btn_area">
-          <button bindtap="bindAddTocart" type="primary" size="mini">加入购物车</button>
-        </view>
+<!--商品详细信息-->
+<view class="shopping-detail">
+  <view class="shopping-detail-nav">
+    <view class="shopping-detail-nav-bar">
+      <view bindtap="toDetail" id="nav-bar-{{!hiddenDetail ? true : 0}}">细节描述</view>
+      <view bindtap="toSpecification" id="nav-bar-{{!hiddenSpecification ? true : 0}}">规格参数</view>
+      <view bindtap="toBrand" id="nav-bar-{{!hiddenBrand ? true : 0}}">品牌描述</view>
+    </view>
+  </view>
+</view>
+<view hidden="{{hiddenDetail}}">
+  细节描述
+</view>
+<view hidden="{{hiddenSpecification}}">
+  规格参数
+</view>
+<view hidden="{{hiddenBrand}}">
+  品牌描述
+</view>
+
+<!--底部添加购物车按钮-->
+<view class="cart_footer">
+  <view class="pay_data">
+    <view class="cart_icon_view">
+      <image class="cart_icon" src="../../images/cartHL.png"></image>
+    </view>
+    <view class="pay_button" bindtap="cascadePopup">马上购买</view>
+    <view class="cart_button" data-id="{{shoppingDetails.id}}" data-title="{{shoppingDetails.title}}" data-price="{{shoppingDetails.price}}" data-pic="{{0}}" bindtap="toCart">加入购物车</view>
+  </view>
+</view>
+
+<!--马上购买弹窗，sku商品组合弹窗-->
+<view class="modal">
+  <view class="modal-mask {{maskVisual}}" bindtap="cascadeDismiss"></view>
+  <view animation="{{animationData}}" class="pay-now">
+    <view class="pay-now-detail">
+      <view><image class="pay-now-detail-img" mode="aspectFill" src="{{goodsPicsInfo[0].picurl}}"></image></view>
+      <view  class="pay-now-detail-tp">
+        <text class="pay-now-detail-title">商品标题商品标题商品标题商品标题商品标题</text>
+        <text class="pay-now-detail-price">￥ 499.00</text>
       </view>
-    </form>
+      <view bindtap="cascadeDismiss" class="modal-close"><icon type="clear" size="12" class="modal-close-" /></view>
+    </view>
+    <view class="pay-now-quantity">
+      <view>数量</view>
+      <view class="pay-now-quantity-am">
+        <view class="pay-now-quantity-minus pay-now-quantity-bg">-</view>
+        <view class="pay-now-quantity-bg">1</view>
+        <view class="pay-now-quantity-add pay-now-quantity-bg">+</view>
+      </view>
+    </view>
+    <view class="pay-now-footer">
+      <text class="pay-now-footer-total">总价：￥{{258}}</text>
+      <text class="pay-now-footer-pay">马上购买</text>
+    </view>
+  </view>
+</view>
+
+<!--加入购物车弹窗-->
+<!--此处代码与马上购买按钮处重复，后期考虑改成模板-->
+<view class="modal">
+  <view class="modal-mask {{maskVisual}}" bindtap="cascadeDismiss"></view>
+  <view animation="{{animationData}}" class="to-cart">
+    <view class="to-cart-detail">
+      <view><image class="to-cart-detail-img" mode="aspectFill" src="{{goodsPicsInfo[0].picurl}}"></image></view>
+      <view  class="to-cart-detail-tp">
+        <text class="to-cart-detail-title">商品标题商品标题商品标题商品标题商品标题</text>
+        <text class="to-cart-detail-price">￥ 499.00</text>
+      </view>
+      <view bindtap="cascadeDismiss" class="modal-close"><icon type="clear" size="12" class="modal-close-" /></view>
+    </view>
+    <view class="to-cart-quantity">
+      <view>数量</view>
+      <view class="to-cart-quantity-am">
+        <view class="to-cart-quantity-minus to-cart-quantity-bg">-</view>
+        <view class="to-cart-quantity-bg">1</view>
+        <view class="to-cart-quantity-to to-cart-quantity-bg">+</view>
+      </view>
+    </view>
+    <view class="to-cart-footer">
+      <text class="to-cart-footer-total">总价：￥{{258}}</text>
+      <text class="to-cart-footer-pay">加入购物车</text>
+    </view>
   </view>
 </view>

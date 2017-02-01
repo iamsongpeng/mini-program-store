@@ -20,6 +20,10 @@ page {
   border-top: #e5e5e5 solid 1px;
 }
 
+#top-nav-bar-true {
+  border-bottom: 2px #09bb07 solid;
+}
+
 /*轮播图*/
 
 swiper {
@@ -64,17 +68,17 @@ swiper {
   display: flex; /*设置为 flex 布局的元素*/
   justify-content: space-between; /*均匀排列每个元素，首、末两元素分别位于起点和终点*/
   font-weight: 900;
-  margin: 0 30rpx;
+  margin: 20rpx 30rpx;
 }
 
 .shelf-title {
   display: flex;
   flex-direction: column;
-  
 }
 
 .shelf-title-en {
   border-bottom: #000000 solid 3px;
+  margin-bottom: 10rpx;
 }
 
 .shelf-more {
@@ -83,3 +87,32 @@ swiper {
 
 
 /*货架列表*/
+.product-card {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 26rpx;
+}
+
+.product-cover {
+  height: 300rpx;
+  width: 300rpx;
+}
+.product-title,
+.product-price
+{
+  width: 300rpx;
+  white-space:nowrap;
+  display: block;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 40rpx;
+}
+
+.product-title {
+  font-size: 9pt;
+}
+.product-price {
+  font-size: 10pt;
+}
