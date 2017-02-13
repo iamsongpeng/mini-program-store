@@ -2,9 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/detail/detail",
-    "pages/address/address",
-    "pages/account/account",
     "pages/cart/cart",
+    "pages/account/account",
+    "pages/address/address",
     "pages/phoneValidate/phoneValidate",
     "pages/questions/questions",
     "pages/classify/classify",

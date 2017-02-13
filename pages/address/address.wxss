@@ -1,108 +1,32 @@
 /* pages/address/address.wxss */
-page {
-	position: relative;
-	height: 100%;
+
+.container {
+  font-size: 12px;
+  background-color: white;
 }
 
-.area_select {
-	width: 100%;
-	display: block;
+.section {
+  height: 100rpx;
+  border-bottom: 1px lightgrey solid;
+  display: flex;
+  align-items: center;
+  margin: 0 30rpx;
 }
 
-/*弹窗主体*/
-.modal-content {
-	position: fixed;
-	bottom: -285px;
-	left: 0;
-	width: 100%;
-	height: 285px;
-	/*box-shadow: 10rpx 0 30rpx rgba(0,0,0,.9);*/
-	margin-top: 5px;
-	background: #fff;
-	/*z-index 属性指定一个元素的堆叠顺序*/
-	z-index: 100;
+.btn-area {
+  display: flex;
+  justify-content: center;
 }
 
-/*遮罩层*/
-.modal-mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: .8;
-    z-index: 10;
+button {
+  width: 90%;
+  position: fixed;
+  bottom: 40rpx;
+  color: #fff;
+  background-color: #fd544a;
 }
 
-/*弹窗头部*/
-.modal-header {
-	margin: 2px 0;
-	font-size: 16px;
-	color: #666;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	line-height: 30px;
-}
-
-/*所在地区字样*/
-.modal-title {
-	text-align: center;
-	width: 100%;
-}
-
-/*关闭按钮*/
-.modal-close {
-	width: 20px;
-}
-
-.modal-body {
-	font-size: 14px;
-}
-
-/*每级地区标题*/
-.viewpager-title {
-	padding: 0 10px;
-	/*color: #f03118;*/
-	line-height: 30px;
-}
-
-/*分隔线*/
-.viewpager-divider {
-	width: 100%;
-	height: 1px;
-	background: #ccc;
-}
-
-/*左右滑动控件*/
-.swiper-area {
-	height:220px;
-}
-
-/*地址列表ListView容器*/
-.viewpager-listview {
-	padding-top: 5px;
-	height: 100%;
-}
-
-/*每行地址item项*/
-.viewpager-listview view{
-	line-height: 30px;
-	padding: 0 10px;
-}
-
-/*高亮当前所选地区*/
-.area-selected {
-	color: red;
-}
-
-/*初始隐藏*/
-.hidden {
-	display: none;
-}
-
-/*运行时显示*/
-.show {
-	display: block;
+.picker {
+  width: 600rpx;
+  height: 100%;
 }

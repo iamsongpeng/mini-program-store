@@ -11,8 +11,17 @@
 * 马上购物和加入购物车按钮实现：sku商品组合
     * [Sku算法，Android实现，淘宝Sku实现](https://github.com/DesignPCode/Sku)
 * LeanCloud 数据库更新，不合理之处修正修正
+* 分类页背景颜色变化效果制作
+* 最新页和最热页制作
+* 购物车demo优化，逻辑层完善
+* 我的页demo优化，逻辑层完善
+* 新增地址页：省市区数据制作，逻辑层完善
 
 ## 微信小程序商城demo(模仿"Coolbuy玩物志"小程序)
+
+这个小作品是个人学习用，仅供学习参考！
+
+github地址：https://github.com/iamsongpeng/mini-program-store
 
 ### 首页
 ![index](http://odhng6tv1.bkt.clouddn.com/mini-program-store-index.png)
