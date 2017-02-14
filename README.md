@@ -20,6 +20,7 @@ github地址：https://github.com/iamsongpeng/mini-program-store
 * 购物车demo优化，逻辑层完善
 * 我的页demo优化，逻辑层完善
 * 新增地址页：逻辑层完善
+* 代码优化：多出可以用模板的，改用模板；部分函数提取到util.js中
 
 ## 已更新内容：
 
